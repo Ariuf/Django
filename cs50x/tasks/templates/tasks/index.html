@@ -3,8 +3,10 @@
 {% block body %}
     <h1>task</h1>
     <ul>
-        {% for tasks in mytasks %}
-            <li>{{tasks}}</li>
+        {% for task in tasks %}
+            <li>{{task}}</li>
+            {% empty %}
+            <li>No tasks yet</li>
         {% endfor %}
     </ul>
     <a href="{% url 'tasks:add' %}">Add new task</a>
